@@ -1,10 +1,5 @@
 from random import shuffle
 
-#def shuffle_word(word):
-#    word = list(word)
-#    shuffle(word)
-#    return ''.join(word)
-
 def encrypt(phrase, key):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     alphabet_key = dict(zip(alphabet, key))
