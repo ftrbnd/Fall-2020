@@ -1,5 +1,6 @@
 from random import shuffle
 
+# returns an encrypted phrase from a normal phrase
 def encrypt(phrase, key):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     alphabet_key = dict(zip(alphabet, key))
@@ -20,6 +21,7 @@ def encrypt(phrase, key):
 
     return encrypted_phrase
 
+# decrypts an encrypted phrase and prints it out
 def decrypt(phrase, key):
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     alphabet_key = dict(zip(key, alphabet))
@@ -44,7 +46,7 @@ def main():
     phrase_two = "There is a theory which states that if ever anybody discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable. There is another theory which states that this has already happened."
     phrase_three = "Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet; and especially whenever my hypos get such an upper hand of me, that it requires a strong moral principle to prevent me from deliberately stepping into the street, and methodically knocking people’s hats off - then, I account it high time to get to sea as soon as I can."
 
-    key = "mudkvecytjohxabrfzplnwgiqs"
+    key = "mudkvecytjohxabrfzplnwgiqs" # key in the form of the modified alphabet
     encrypted_phrase_one = encrypt(phrase_one, key)
     encrypted_phrase_two = encrypt(phrase_two, key)
     encrypted_phrase_three = encrypt(phrase_three, key)

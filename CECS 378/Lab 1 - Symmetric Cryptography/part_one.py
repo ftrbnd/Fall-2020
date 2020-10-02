@@ -21,9 +21,11 @@ def decrypt(phrase, phrases):
     # assume that the most frequent letter is the encrypted letter for 'e'
     shift = 0
     if original_phrase == phrases[0]: 
-        shift = letter_values[most_common_letter[0]] - letter_values['a']
+        shift = letter_values[most_common_letter[0]] - letter_values['a'] # first phrase is compared with 'a' rather than 'e'
     elif original_phrase == phrases[1]:
-         shift = letter_values[most_common_letter[0]] - letter_values['t']
+        shift = letter_values[most_common_letter[0]] - letter_values['t'] # second phrase is compared with 't' rahter than 'e'
+    else:
+        shift = letter_values[most_common_letter[0]] - letter_values['e']
         # 1) most common letter: j; 'a'
             # most common vowel: 
         # 2) most common letter: o, 't'
@@ -38,6 +40,7 @@ def decrypt(phrase, phrases):
 
     decrypted_phrase = ' '.join(decrypted_phrase[i:i+5] for i in range(0, len(decrypted_phrase), 5)) # re-adding spaces
     print("Decrypted phrase:", decrypted_phrase)
+    print()
 
 def main():
     phrases = []
@@ -52,5 +55,7 @@ def main():
 
     decrypt(phrase_one, phrases)
     decrypt(phrase_two, phrases)
+    decrypt(phrase_three, phrases)
+    decrypt(phrase_four, phrases)
 
 main()
